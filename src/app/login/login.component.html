@@ -1,0 +1,24 @@
+<h1>Login</h1>
+<div>
+    <div>
+        <form [formGroup]="loginFormGroup">
+            <mat-form-field appearance="fill">
+                <mat-label>Ingresa tu email</mat-label>
+                <input matInput placeholder="tu-email@ejemplo.com" required formControlName="email">
+                <mat-error *ngIf="formControl('email')?.hasError('required')">
+                    Email es <strong>requerido</strong>.
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Ingresa tu contraseña</mat-label>
+                <input matInput placeholder="Tu contraseña" required formControlName="password">
+                <mat-error *ngIf="formControl('email')?.hasError('required')">
+                    Contraseña es <strong>requerida</strong>.
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>

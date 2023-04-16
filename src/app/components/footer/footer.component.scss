@@ -1,0 +1,30 @@
+.footer-container {
+    background: #c2185b;
+    color: #fff;
+    margin-top: auto;
+    .footer-list {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 8px;
+    }
+    .footer-spacer {
+        flex: 1 1 auto;
+    }
+    .footer-copy {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        flex-direction: column;
+        .footer-copy-content {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-end;
+            text-align: center;
+            p {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
