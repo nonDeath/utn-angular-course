@@ -2,13 +2,17 @@
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
     </button>
-    <span>{{appName}}</span>
-
+    <span routerLink="/">{{appName}}</span>
+    <a mat-button routerLink="/" routerLinkActive="active" aria-label="Home" [routerLinkActiveOptions]="{exact: true}">
+        Inicio
+    </a>
+    <a mat-button routerLink="/login" routerLinkActive="active" title="Login">Login</a>
+    <a mat-button routerLink="/registro" routerLinkActive="active" title="Registro">Registro</a>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Favorite">
         <mat-icon>favorite</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <button mat-icon-button class="example-icon" aria-label="Share">
         <mat-icon>share</mat-icon>
     </button>
 </mat-toolbar>

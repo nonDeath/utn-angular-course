@@ -1,0 +1,11 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+mat-toolbar {
+    a {
+        margin-left: 5px;
+    }
+}
+.active {
+    background-color: rgba(14, 14, 14, .36);
+}

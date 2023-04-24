@@ -1,0 +1,58 @@
+<h1>Detalle de Producto</h1>
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="!loading" fxLayout="row wrap" fxLayoutGap="15px grid">
+    <div fxFlex="75%" fxFlex.xs="100%" fxFlex.sm="33%">
+        <mat-card appearance="raised" class="mat-elevation-z8">
+            <mat-card-header>
+                <mat-card-title>{{ product!.title }}</mat-card-title>
+                <mat-card-subtitle>{{ product!.family_name }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-divider class="mb-15"></mat-divider>
+            <mat-card-content>
+                <div class="picture-list" fxLayout="row wrap" fxLayoutGap="15px grid">
+                    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let picture of product.pictures">
+                        <mat-card>
+                            <img src="{{picture.url}}" alt="{{picture.id}}">
+                        </mat-card>
+                    </div>
+                </div>
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Descripción detallada
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p [innerHtml]="product!.description.plain_text | nl2br"></p>
+                </mat-expansion-panel>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-icon-button aria-label="Example icon button with a heart icon">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-button routerLink="/" title="Ver detalles">VOLVER</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+        <mat-card appearance="raised" class="mat-elevation-z8">
+            <mat-card-header>
+                <mat-card-title>
+                    <div class="product-title">
+                        Información adicional
+                    </div>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{ product!.price | currency: product!.currency_id:'symbol':'4.2-2'}}</h2>
+                <mat-chip-set aria-label="Tags">
+                    <mat-chip *ngIf="product.condition === 'new'">Nuevo</mat-chip>
+                    <mat-chip *ngIf="product.condition !== 'new'">Usado</mat-chip>
+                    <mat-chip *ngIf="product.accepts_mercadopago">Mercado Pago</mat-chip>
+                    <mat-chip>{{product.warranty}}</mat-chip>
+                </mat-chip-set>
+                <br>
+                <p>Stock disponible: {{ product!.available_quantity }} </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

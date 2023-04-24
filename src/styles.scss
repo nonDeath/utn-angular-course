@@ -5,6 +5,29 @@ main, footer {
     padding: 16px;
     flex: 1;
 }
+main {
+    margin-top: 74px;
+}
 .text-centered {
     text-align: center;
+}
+.full-height {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.main-content {
+    flex: 1;
+    height: 100%;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+mat-toolbar {
+    display:flex;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 1000;
 }

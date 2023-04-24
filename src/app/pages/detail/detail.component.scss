@@ -1,0 +1,17 @@
+.mb-15 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.picture-list {
+    mat-card {
+        background-color: white;
+        height: 192px;
+        margin-bottom: 15px;
+        display: flex;
+        overflow: hidden;
+        img {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
