@@ -1,0 +1,26 @@
+<h1>Productos destacados</h1>
+<div fxLayout="row wrap" fxLayoutGap="15px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of products">
+        <mat-card appearance="raised" class="mat-elevation-z8">
+            <mat-card-header>
+                <mat-card-title>
+                    <div class="product-title">
+                        {{ item.title }}
+                    </div>
+                </mat-card-title>
+            </mat-card-header>
+            <div class="product-thumbnail overflow-hidden">
+                <img src="{{ item.thumbnail }}" alt="{{ item.title }}">
+            </div>
+            <mat-card-content>
+                <p>Stock disponible: {{ item.available_quantity }} </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-icon-button aria-label="Example icon button with a heart icon">
+                    <mat-icon>favorite</mat-icon>
+                  </button>
+                <button mat-button routerLink="/producto/{{item.id}}" title="Ver detalles">DETALLES</button>
+              </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -4,25 +4,7 @@
     </header>
 
     <main>
-        <mat-card class="main-content">
-            <mat-card-content>
-                <app-register></app-register>
-                <br>
-                <mat-divider></mat-divider>
-                <br>
-                <app-login></app-login>
-                <br>
-                <mat-divider></mat-divider>
-                <br>
-                <app-home></app-home>
-                <mat-divider></mat-divider>
-                <br>
-                <app-catalog></app-catalog>
-                <mat-divider></mat-divider>
-                <br>
-                <app-detail></app-detail>
-            </mat-card-content>
-        </mat-card>
+        <router-outlet></router-outlet>
     </main>
 
     <app-footer [appName]="title"></app-footer>
